@@ -5,10 +5,10 @@
 # convenient.
 ###############################################################################
 CC = g++
-FLAGS = -g
-SOURCES = *.h *.cpp
+FLAGS = -g -std=c++11
+SOURCES = *.cpp
 
-EXENAME = my_prog
+EXENAME = obj_reader
 
 all: $(SOURCES)
 	$(CC) $(FLAGS) -o $(EXENAME) $(SOURCES)

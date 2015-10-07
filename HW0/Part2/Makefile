@@ -5,7 +5,7 @@
 # convenient.
 ###############################################################################
 CC = g++
-FLAGS = -g
+FLAGS = -g -std=c++11
 
 # The following line is a relative directory reference that assumes the Eigen
 # folder--which your program will depend on--is located one directory above the
@@ -13,7 +13,7 @@ FLAGS = -g
 INCLUDE = -I../
 SOURCES = *.h *.cpp
 
-EXENAME = my_prog
+EXENAME = eigen_demo
 
 all: $(SOURCES)
 	$(CC) $(FLAGS) -o $(EXENAME) $(INCLUDE) $(SOURCES)
