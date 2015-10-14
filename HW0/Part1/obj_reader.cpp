@@ -38,6 +38,7 @@ int main(int argc, char* argv[])
     if (argc < 2)
     {
         cout << "Usage: " << argv[0] << " file1 [file2] [file3] ...\n";
+        exit(1);
     }
     
     cout << "Reading files...\n";
