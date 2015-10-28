@@ -57,6 +57,7 @@ struct Object
 {
     vector<Vertex> vertices;
     vector<Face> faces;
+    string name;
 };
 
 Object read_obj(char* filename);
@@ -65,15 +66,20 @@ vector<string> &split(const string &s, char delim, vector<string> &elems);
 int main(int argc, char* argv[])
 {
     // No filenames provided as arguments, print usage statement
-    if (argc < 2)
+    if (argc != 4)
     {
-        cout << "Usage: " << argv[0] << " file1 [file2] [file3] ...\n";
+        cout << "Usage: " << argv[0] << " scene_description_file.txt xres yres\n";
         exit(1);
     }
     
-    cout << "Reading files...\n";
+    // Output image resolution
+    int xres = atoi(argv[2]);
+    int yres = atoi(argv[3]);
+    
+    cout << "Reading file...\n";
     
     vector<Object> objects;
+    Camera c;
     
     // Read files in
     for (int i = 1; i < argc; i++)
